@@ -9,26 +9,26 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    int sumNumbers(TreeNode* root) {
+    int sumNumbers(TreeNode* root)
+    {
         
         return treePathsSumUtil(root, 0);
     }
     
     int treePathsSumUtil(TreeNode *root, int value)  
-{  
+    {  
       
-    if (root == NULL) return 0;  
+        if (root == NULL)
+            return 0;  
   
-      
-    value = (value*10 + root->val);  
+        value = (value*10 + root->val);  
   
-      
-    if (root->left==NULL && root->right==NULL)  
-    return value;  
+        if (root->left==NULL && root->right==NULL)  
+            return value;  
   
-     
-    return treePathsSumUtil(root->left, value) +  treePathsSumUtil(root->right, value);  
-}  
+        return treePathsSumUtil(root->left, value) +  treePathsSumUtil(root->right, value);  
+    }  
 };
